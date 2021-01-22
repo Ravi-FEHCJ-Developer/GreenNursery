@@ -1,0 +1,51 @@
+.pagination
+{
+  margin-top: 10%;
+  justify-content: center;
+}
+.pagination div
+{
+  display: inline-block;
+  margin:0 10px;
+}
+.pagination .page
+{
+  color:gray;
+}
+.pagination .prev,.pagination .next
+{
+ color:#000;
+ border:1px solid #000;
+ font-size:15px;
+ padding:7px 15px;
+ cursor: pointer;
+}
+
+.pagination .prev.disabled,
+.pagination .next.disabled
+{
+  border-color: gray;
+  color:gray;
+  pointer-events: none;
+}
+
+.firstrow .item.hide
+{
+  display: none;
+}
+.firstrow .item.show
+{
+  display: block;
+  animation: show .5s ease;
+}
+@keyframes show
+{
+    0%{
+      opacity:0;
+      transform: scale(0.9);
+    }
+    100%{
+      opacity:1;
+      transform: scale(1);
+    }
+}

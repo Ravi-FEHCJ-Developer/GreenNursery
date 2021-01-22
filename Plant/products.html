@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="  sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="  sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <!-- font awesom link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- my navbar link -->
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="pagination.css">
+
+
+<style>
+
+  html,body
+  {
+  	padding: 0px;
+  	margin: 0px;
+  	width: 100%;
+  	background-color:  #f7f7f7;
+    color: black;
+  }
+
+
+
+  /* our products title */
+  .articlestart
+  {
+  	display: flex;
+  	text-align: center;
+  	justify-content: center;
+  }
+
+  .articlestart article
+   {
+  	width: 20%;
+   }
+
+
+  /* products list */
+  .firstrow
+  {
+  	height: 100%; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    width: 100%; 
+    place-items: center;
+  }
+
+  .firstrow img:hover
+  {
+  	opacity: 0.7;
+  }
+
+  .item:hover
+  {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.0);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.0);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.0);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+  }
+
+  a
+  {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover
+  {
+    color: blue;
+    text-decoration: none;
+  }
+</style>
+
+</head>
+<body>
+
+<!-- navbar -->
+      <nav >
+
+            <div class="mynavbar">
+
+              <div class="hamburger-menu">
+              <img src="images/products/menu.png" style="position: absolute; top: 3%; height: 30px; width: 30px;">
+              </div>
+
+              <div class="logo" style="padding-left: 20px; width: 20%; z-index: 1 ">
+                <img src="images/products/logo.png" style="width: 100%; height: 110px; padding: 10px;">
+              </div>
+
+              <ul class="nav-ul">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li class="dropdown"><a href="#">About Us</a>
+                  <ul>
+                    <li class="dropdown-content"><a href="career.html">Career</a></li>
+                    <li class="dropdown-content"><a href="#">Contact</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <div class="cart-btn">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0     1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0         0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    <div class="cart-items"><span>0</span></div>
+              </div>
+              
+            </div>
+      </nav>
+<!-- end of navbar -->
+
+<!-- start of cart -->
+	<aside class="cart" id="cartrefresh">
+		<span class="close-cart">
+			<i class="fa fa-window-close"></i>
+		</span>
+		<h2>ur cart</h2>
+		<div class="cart-content">
+            
+			<!-- cart item -->
+            <div class="cart-item" id="cart-it">
+            </div>
+			<!-- end of cart item -->
+
+		</div>
+		<div class="cart-footer">
+			<h3>your Total: Rs. <span class="cart-total">0</span></h3>
+			<button class="clear-cart">Clear Cart</button>
+		</div>
+	</aside>
+<!-- end of cart -->
+
+
+<!-- our product title-->
+ <div class="articlestart">
+ <article>
+	<h1>Our Products</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+ </article>
+ </div>
+<!-- end of our product title-->
+
+<!-- products -->
+   <div  class="firstrow" id="firstrow" >   
+   </div>
+<!-- end of products -->
+
+<!-- pagination -->
+  <div class="pagination">
+    <div class="prev" id="prev">Prev</div>
+    <div class="page" id="next">Page <span class="page-num"></span></div>
+    <div class="next">Next</div>
+  </div>
+<!-- end of pagination -->
+
+<!-- footer -->
+ <footer>
+  <div class="outerfooter">
+    <div class="smallfooter" >
+      <h1>Follow Us</h1>
+      <a href="#" style="padding: 5px;"><img src="images/contacts/fb.png" style="height: 30px; border: none; outline: none;"> Facebook</a>
+      <a href="#" style="padding: 5px;"><img src="images/contacts/twitter.png" style="height: 30px; width: 30px; background-color: white; border: none; outline: none;"> twitter</a>
+      <a href="#" style="padding: 5px;"><img src="images/contacts/insta.png" style="height: 30px; border: none; outline: none;"> instagram</a>
+      <a href="#" style="padding: 5px;"><img src="images/contacts/utube.png" style="height: 30px; width: 30px; background-color: white; border: none; outline: none; border-radius: 50%;"> Youtube</a>
+    </div>
+    <div class="smallfooter">
+      <h1>Links</h1>
+      <a  href="#">Schedule</a>
+      <a  href="#">Speakers</a>
+      <a  href="#">Contact</a>
+      <a  href="career.html">Career</a>
+    </div>
+    <div class="smallfooter">
+        <h1>Venue</h1>
+        <p style="font-size: 1.3rem; color: white;">House no 432,
+             Rampura Mohalla,
+             Street no 7,</p>
+        <p style="font-size: 1.3rem; color: white;">Hisar, Haryana
+        </p>
+    </div>
+  </div>
+    <p class="copyryt">&copy; 2020 All rights reserved | This template is made by Ravi Ghorla<p>
+ </footer>
+<!-- end of footer -->
+
+
+<script>
+
+  //products list
+   const productsarray = 
+   [
+                 {
+                    name: "Apple",
+                    price: "Rs.10",
+                    rate: "8.5/10",
+                    Category: "Fruit",
+                    img: "images/products/apple.jpg",
+                    link: "apple"
+                 },
+                 {
+                    name: "Apricot",
+                    price: "Rs.20",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/apricot.jpg",
+                    link: "apricot"
+                 },
+                 {
+                    name: "Banana",
+                    price: "Rs.30",
+                    rate: "5.5/10",
+                    Category: "Fruit",
+                    img: "images/products/banana.jpg",
+                    link: "banana"
+                 },
+                 {
+                    name: "Cherry",
+                    price: "Rs.40",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/cherry.jpg",
+                    link: "cherry"
+                 },
+                 {
+                    name: "Fig",
+                    price: "Rs.50",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/fig.jpg",
+                    link: "fig"
+                 },
+                 {
+                    name: "Orange",
+                    price: "Rs.60",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/orange.jpg",
+                    link: "orange"
+                 },
+                 {
+                    name: "Peach",
+                    price: "Rs.40",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/peach.jpg",
+                    link: "peach"
+                 },
+                 {
+                    name: "Pear",
+                    price: "Rs.50",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/pear.jpg",
+                    link: "pear"
+                 },
+                 {
+                    name: "Plum",
+                    price: "Rs.60",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/plum.jpg",
+                    link: "plum"
+                 },
+                 {
+                    name: "Quince",
+                    price: "Rs.50",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/quince.jpg",
+                    link: "quince"
+                 },
+                 {
+                    name: "Pear",
+                    price: "Rs.60",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/pear.jpg",
+                    link: "pear"
+                 },
+                 {
+                    name: "Plum",
+                    price: "Rs.40",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/plum.jpg",
+                    link: "plum"
+                 },
+                 {
+                    name: "Quince",
+                    price: "Rs.50",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/quince.jpg",
+                    link: "quince"
+                 },
+                 {
+                    name: "Apple",
+                    price: "Rs.60",
+                    rate: "6.5/10",
+                    Category: "Fruit",
+                    img: "images/products/apple.jpg",
+                    link: "apple"
+                 },
+                 
+
+
+      ];
+
+          function productsinfo(prod)
+          {
+            return ` <div class="item" style="width: 80%; height: 88%; clear:both;" >
+  	                     <a href="images/products/productsdetail/${prod.link}/${prod.link}.html"> <img src="${prod.img}" style="width: 100%; height: 54%;">
+  	                      <h2 style=" padding: 5px;">${prod.name}</h2>
+  	                      <div style=" padding: 5px;">
+  	                        <div >
+                                <p><span style="font-weight: bold;">Price: </span>${prod.price}</p>
+                                <p style="float: right;" ><span style="font-weight: bold;">Category:</span> ${prod.Category}</p>
+                            </div>
+  		                      <p><span style="font-weight: bold;">Rating:</span> ${prod.rate}</p>
+                          </div>
+                          <div style=" padding: 5px;">
+  		                      <button style="float: left; width: 25%;" class="cartbtn">CART</button>
+  		                      <button style="float: left; width: 25%;" class="cartbtn">VIEW</button>
+  	                      </div></a>
+  	                   </div> 
+                       `
+          }
+
+            document.getElementById("firstrow").innerHTML = ` ${productsarray.map(productsinfo).join('')}`   
+  //end of product list        
+
+</script>
+<script src="pagination.js"></script>
+<script src="cart.js"></script>
+</body>
+</html>

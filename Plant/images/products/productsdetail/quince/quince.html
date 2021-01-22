@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="  sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="  sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<!-- font awesom link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- my navbar link -->
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="pagination.css">
+	<title>quince</title>
+
+<style>
+	 html,body
+  {
+  	padding: 0px;
+    margin: 0px;
+    width: 100%;
+    background-color:  #f7f7f7;
+    color: black;
+  }
+
+  /* Fav */
+  i 
+  {
+    cursor:pointer;
+    padding:10px 12px 8px;
+    background:#fff;
+    border-radius:50%;
+    display:inline-block;
+    margin:0 0 15px;
+    color:#aaa;
+    transition:.2s;
+  }
+
+  i:hover 
+  {
+    color:#666;
+  }
+
+  i:before {
+    font-family:fontawesome;
+    content:'\f004';
+    font-style: normal;
+  }
+
+
+  i.press {
+    animation: size .s;
+    color:#e23b3b;
+  }
+
+
+@keyframes fade {
+  0% {color:#transparent;}
+  50% {color:#e23b3b;}
+  100% {color:#transparent;}
+}
+
+@keyframes size {
+  0% {padding:10px 12px 8px;}
+  50% {padding:14px 16px 12px;  
+    margin-top:-4px;}
+  100% {padding:10px 12px 8px;}
+}
+/* end of fav */
+
+.clear
+{
+	clear: both;
+}
+
+.firstrow {
+  border: 5px solid #b366ff;
+  width: 100%; 
+  height: 24%; 
+  position: absolute; 
+  top: 103%; 
+  text-align: center; 
+  left: 12%; 
+  display: flex; 
+  justify-content: center;
+}
+
+
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: #fff;
+}
+.close {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f26d7d;
+    color: #fff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    padding-top: 5px;
+}
+.close:hover {
+    background: #fa3f6f;
+}
+
+</style>	
+</head>
+<body>
+<!-- navbar -->
+      <nav >
+
+            <div class="mynavbar">
+
+              <div class="hamburger-menu">
+              <img src="C:/Users/HP/Desktop/HTML/WEBSITE/js/project/Tree/menu.png" style="position: absolute; top: 3%; height: 30px; width: 30px;">
+              </div>
+
+              <div class="logo" style="padding-left: 20px; width: 20%; z-index: 1 ">
+                <img src="C:/Users/HP/Desktop/HTML/WEBSITE/js/project/Tree/logo.png" style="width: 100%; height: 110px; padding: 10px;">
+              </div>
+
+              <ul class="nav-ul">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li class="dropdown"><a href="#">About Us</a>
+                  <ul>
+                    <li class="dropdown-content"><a href="#">Career</a></li>
+                    <li class="dropdown-content"><a href="#">Contact</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <div class="cart-btn">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0     1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0         0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    <div class="cart-items"><span>0</span></div>
+              </div>
+              
+            </div>
+      </nav>
+<!-- end of navbar -->
+
+<!-- details -->
+  <div id="container" style="margin-top: 3%; height: 1100px; position: relative;">
+
+  	<!-- product details -->
+  	<div class="inner-container" style="padding: 10px; float: left;  width: 80%; height: 800px; position: relative;">
+
+        
+        <div class="smallimg-div" style="border: ; float: left; width: 5%; height: 100%; padding: 3px;">
+          <a href="#openModal-about"> <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; border-radius: 50%; height: 6%; margin-top: 5px; margin-right: 5px;"></a>
+          <a href="#openModal-about"> <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; border-radius: 50%; height: 6%; margin-top: 5px; margin-right: 5px;"></a>
+          <a href="#openModal-about"> <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; border-radius: 50%; height: 6%; margin-top: 5px; margin-right: 5px;"></a>
+          <a href="#openModal-about"> <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; border-radius: 50%; height: 6%; margin-top: 5px; margin-right: 5px;"></a>
+          <a href="#openModal-about"> <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; border-radius: 50%; height: 6%; margin-top: 5px; margin-right: 5px;"></a>
+          <a href="#openModal-about"> <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; border-radius: 50%; height: 6%; margin-top: 5px; margin-right: 5px;"></a>
+        </div>
+        
+        <!-- modal -->
+           <div id="openModal-about" class="modalDialog">
+            <div>
+               <a href="#close" title="Close" class="close">X</a>
+               <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%; height: 100%;">
+             </div>
+           </div>
+        <!-- end of modal -->
+
+  		  <div class="img-div" style="float: left; width: 65%;">
+  		    <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg"style="width: 100%;">
+  	    </div>
+
+  	    <div class="rigth-float" style="float: right; width: 30%;  margin-top: 0px;">
+  			<div style="height: 70px; display: flex; justify-content: space-around;">
+  				<h4 class="name" style="padding: 20px;">quince</h3>
+  				<h4 class="price" style="padding: 20px; ">Rs. 20</h4>
+  		 	</div>
+
+  		 	<div style="height: 80px; display: flex; justify-content: space-around;  margin-top: 0px;">
+  		 	    <button class="add_to_cart" style="float: left; width: 50%; height: 70%;">ADD TO CART</button>
+  		 	    <i style="padding: 20px; float: left; "><span>  Add to Fav<span></i>
+  		    </div>
+
+  		    <div style="padding: 10px; margin-top: 0px;">
+  			 	<span style="font-weight: bold;">Description</span><p style="padding: 20px; ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet.</p>
+
+  			 	<span style="font-weight: bold;">Good To Know: </span><p style="padding: 20px; ">Aliquam sem et tortor consequat. Facilisis leo vel fringilla est ullamcorper eget nulla. Diam ut venenatis tellus in. Quam nulla porttitor massa id neque aliquam.</p>
+  		    </div>
+          </div>
+
+          <!-- choose products -->
+          <div class="firstrow" id="firstrow" >
+  		    	<article class="item" style="clear:both; padding: 10px;" >
+  		    		<img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+  		    		<div class="info" style="display: flex; justify-content: space-around;">
+  		    			<p>name1</p>
+  		    			<p>price</p>
+  		    		</div>
+  		    		    <p>Rating:</p>
+  		    	</article>
+  		    	<article class="item" style="clear:both; padding: 10px;">
+  		    		<img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+  		    		<div class="info" style="display: flex; justify-content: space-around;">
+  		    			<p>name2</p>
+  		    			<p>price</p>
+  		    		</div>
+  		    		    <p>Rating:</p>
+  		    	</article>
+  		    	<article class="item" style="clear:both; padding: 10px;">
+  		    		<img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+  		    		<div class="info" style="display: flex; justify-content: space-around;">
+  		    			<p>name3</p>
+  		    			<p>price</p>
+  		    		</div>
+  		    		    <p>Rating:</p>
+  		    	</article>
+  		    	<article class="item" style="clear:both; padding: 10px;">
+  		    		<img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+  		    		<div class="info" style="display: flex; justify-content: space-around;">
+  		    			<p>name4</p>
+  		    			<p>price</p>
+  		    		</div>
+  		    		    <p>Rating:</p>
+  		    	</article>
+  		    	<article class="item" style="clear:both; padding: 10px;">
+  		    		<img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+  		    		<div class="info" style="display: flex; justify-content: space-around;">
+  		    			<p>name5</p>
+  		    			<p>price</p>
+  		    		</div>
+  		    		    <p>Rating:</p>
+  		    	</article>
+  		    	<article class="item" style="clear:both; padding: 10px;">
+  		    		<img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+  		    		<div class="info" style="display: flex; justify-content: space-around;">
+  		    			<p>name6</p>
+  		    			<p>price</p>
+  		    		</div>
+  		    		    <p>Rating:</p>
+  		    	</article>
+            <article class="item" style="clear:both; padding: 10px;">
+              <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+              <div class="info" style="display: flex; justify-content: space-around;">
+                <p>name7</p>
+                <p>price</p>
+              </div>
+                  <p>Rating:</p>
+            </article>
+            <article class="item" style="clear:both; padding: 10px;">
+              <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+              <div class="info" style="display: flex; justify-content: space-around;">
+                <p>name8</p>
+                <p>price</p>
+              </div>
+                  <p>Rating:</p>
+            </article>
+            <article class="item" style="clear:both; padding: 10px;">
+              <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+              <div class="info" style="display: flex; justify-content: space-around;">
+                <p>name9</p>
+                <p>price</p>
+              </div>
+                  <p>Rating:</p>
+            </article>
+            <article class="item" style="clear:both; padding: 10px;">
+              <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+              <div class="info" style="display: flex; justify-content: space-around;">
+                <p>name10</p>
+                <p>price</p>
+              </div>
+                  <p>Rating:</p>
+            </article>
+            <article class="item" style="clear:both; padding: 10px;">
+              <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+              <div class="info" style="display: flex; justify-content: space-around;">
+                <p>name11</p>
+                <p>price</p>
+              </div>
+                  <p>Rating:</p>
+            </article>
+            <article class="item" style="clear:both; padding: 10px;">
+              <img src="C:\Users\HP\Desktop\HTML\WEBSITE\js\project\Tree\productsdetail\quince\a.jpg" style="height: 100px; width: 150px;">
+              <div class="info" style="display: flex; justify-content: space-around;">
+                <p>name12</p>
+                <p>price</p>
+              </div>
+                  <p>Rating:</p>
+            </article>
+
+
+            <div class="pagination">
+                <div class="prev" style="left: 5%;">Prev</div>
+                <div class="next" style="right: 5%;">Next</div>
+            </div>
+          
+          </div>	    	
+          <!-- end of choose products -->
+          
+      </div>
+      <!-- end of product details -->
+
+      <!-- right column -->
+      <div class="right-column" style="float: right; width: 20%; height: 800px; ">
+      	<div class="Flowering_House_Plants">
+      		<div style="text-align: center;">
+      		<h5 style="font-weight: bold;">Flowering House Plants</h5>
+      		</div>
+      		<ul style="padding-left: 30%; ">
+      			<li>Amaryllis</li>
+      			<li>African Violet</li>
+      			<li>Barberton Daisy</li>
+      			<li>Angel Wing Begonia</li>
+      			<li>Belladonna Lily</li>
+      			<li>Beach Spider Lily</li>
+      			<li>Blushing Bromeliad</li>
+      			<li>Bird Of Paradise</li>
+      			<li>Amaryllis</li>
+      			<li>African Violet</li>
+      			<li>Barberton Daisy</li>
+      			<li>Angel Wing Begonia</li>
+      			<li>Belladonna Lily</li>
+      			<li>Beach Spider Lily</li>
+      			<li>Blushing Bromeliad</li>
+      			<li>Bird Of Paradise</li>
+      		</ul>	
+      	</div>
+      	<div class="Foliage_Type_Plants">
+      		<div style="text-align: center;">
+      		<h5 style="font-weight: bold;">Foliage Type Plants</h5>
+      		</div>
+      		<ul style="padding-left: 30%; ">
+      			<li>Areca Palm</li>
+      			<li>Aluminum Plant</li>
+      			<li>Arrowhead</li>
+      			<li>Bird's Nest Fern</li>
+      			<li>Broadleaf Lady Palm</li>
+      		</ul>	
+      	</div>
+      </div>
+      <!-- end of right column -->
+
+      
+  </div>
+<!-- end of details -->
+
+
+
+<!-- footer -->
+ <footer>
+	<div class="outerfooter">
+		<div class="smallfooter">
+			<h1>Follow Us</h1>
+			<a href="#">Facebook</a>
+			<a href="#">twitter</a>
+			<a href="#">instagram</a>
+			<a href="#">Youtube</a>
+		</div>
+		<div class="smallfooter">
+			<h1>Links</h1>
+			<a  href="#">Schedule</a>
+			<a  href="#">Speakers</a>
+			<a  href="#">Contact</a>
+		</div>
+		<div class="smallfooter" style="font-size: 1.5rem;">
+			<h1>Venue</h1>
+			<p style="font-size: 1.8rem; color: white;">House no 432,
+			   Rampura Mohalla,
+			   Street no 7,</p>
+			<p style="font-size: 1.8rem; color: white;">Hisar, Haryana
+			</p>
+		</div>
+	</div>
+		<p class="copyryt">&copy; 2020 All rights reserved | This template is made with by Ravi Ghorla<p>
+ </footer>
+<!-- end of footer -->	
+
+<script type="text/javascript">
+	  $(function() {
+    $( "i" ).click(function() {
+      $( "i,span" ).toggleClass( "press", 1000 );
+    });
+  });
+</script>
+<script src="pagination.js"></script>
+</body>
+</html>

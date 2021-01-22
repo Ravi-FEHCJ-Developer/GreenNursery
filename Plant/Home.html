@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="    sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="    sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+
+<style>
+
+	html,body
+	{
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+		background-color:  #f7f7f7;
+	    
+	}
+
+
+	.mainimg
+	{
+		width: 100%;
+	}
+
+	.mainimg img
+	{
+		width: 100%;
+		opacity: 0.8;
+	}
+
+
+	.sectionbox
+	{
+		background-color: #ccccff;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 10px;
+	}
+
+
+	.sectionbox p
+	{
+		font-size: 2.2rem;
+		font-family: 'Dancing Script', cursive;
+		padding: 130px;
+		width: 70%;
+	}
+
+	.writer_name
+	{
+		font-family: 'Dancing Script', cursive;
+	}
+
+	.sectionbox img
+	{
+		padding: 10px;
+		width: 22%;
+		height: 450px;
+		border-top-right-radius: 20%;
+		border-bottom-left-radius: 20%;
+		box-shadow: 2px 10px 5px 2px rgba(1,0,0,0.2);
+		box-sizing: border-box;
+	}
+
+	@media only screen and (max-width: 870px)
+	{
+	    .sectionbox
+		{
+			align-items: center;
+			flex-direction: column;
+			width: 100%;
+		}
+
+	    .sectionbox p
+		{
+			width: 100%;
+			padding: 0;
+		}
+
+		.sectionbox img
+		{
+			padding: 10px;
+			width: 80%;
+		}
+
+	}
+
+	/* form */
+	@media only screen and (max-width: 798px)
+	{
+		.form
+		{
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.outer-div
+		{
+			flex-direction: column;
+		}
+
+		.outer-div div
+		{
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+
+</style>
+</head>
+
+<body>
+    <!-- navbar -->
+	    <nav >
+            <div class="mynavbar">
+            	<div class="hamburger-menu">
+            	<img src="images/home/menu.png" style="position: absolute; top: 3%; height: 30px; width: 30px;">
+            	</div>
+            	<div class="logo" style="padding-left: 20px; width: 20%; z-index: 1 ">
+            		<img src="images/home/logo.png" style="width: 100%; height: 110px; padding: 10px;">
+            	</div>
+            	<ul class="nav-ul">
+            		<li><a href="Home.html">Home</a></li>
+            		<li><a href="Products.html">Products</a></li>
+            		<li class="dropdown"><a href="#">About Us</a>
+            			<ul>
+            				<li class="dropdown-content"><a href="career.html">Career</a></li>
+            				<li class="dropdown-content"><a href="#">Contact</a></li>
+            			</ul>
+            		</li>
+            	</ul>
+
+            	<div class="cart-btn">
+		            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0     1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0         0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+		                <div class="cart-items"><span>0</span></div>
+	            </div>
+            	
+            </div>
+	    </nav>
+    <!-- end of navbar -->
+
+    <!-- start of cart -->
+	    <aside class="cart" id="cartrefresh">
+	        <span class="close-cart">
+	            <i class="fa fa-window-close"></i>
+	        </span>
+	        <h2>ur cart</h2>
+	        <div class="cart-content">
+	            <!-- cart item -->
+	            <div class="cart-item" id="cart-it">
+	            </div>
+	            <!-- end of cart item -->
+	        </div>
+	        <div class="cart-footer">
+	            <h3>your Total: Rs. <span class="cart-total">0</span></h3>
+	            <button class="clear-cart">Clear Cart</button>
+	        </div>
+	    </aside>
+    <!-- end of cart -->
+
+    <!-- main pic -->
+	    <div class="mainimg">
+	        <img src="images/home/Main.jpg">
+	    </div>
+    <!-- end of main pic -->
+
+    <!-- images array -->
+	    <div class="sixsmallpics" id="homepics" style="display: inline-flex;
+		flex-wrap: wrap;
+		width: 100%; padding: 50px;">
+	    </div>
+    <!-- end of images array -->
+
+    <!-- section -->
+	    <section>
+	        <div class="sectionbox">
+	            <p>“The more clearly we can focus our attention on the wonders and realities of the universe about us, the less taste we shall have for destruction” – <span class="writer_name">Rachel Carson.</span></p>
+	            <img src="images/home/sectionbox.jpg">
+	        </div>
+	    </section>
+    <!-- end of section -->
+
+    <!-- Form -->
+	    <section style="margin-top: 100px;">
+	        <h1 style="text-align: center; color: grey; text-decoration: underline;">Form Application</h1>
+	        <div class="form" style="border-top: 6px solid grey; border-bottom: 6px solid grey; width: 98.5%; margin: 10px; box-shadow: 0px 0px 0px 0px rgba(1,0,0,0);">
+	           
+	            <div class="outer-div" style="display: flex; padding: 20px;">
+	                <div style="padding: 50px; width: 100%; font-size: 1.3rem; display: flex; flex-direction: column;">
+	                    <label>Name:</label>
+	                    <input type="text" name="name" required placeholder="Full Name">
+	                </div>
+	                <div style="padding: 50px; width: 100%; font-size: 1.3rem; display: flex; flex-direction: column; ">
+	                    <label>Date-Of-Birth:</label>
+	                    <input type="date" id="dob" name="DOB">
+	                </div>
+	            </div>
+	           
+	            <div class="outer-div" style="display: flex; padding: 20px;">
+	                <div style="padding: 50px; width: 100%; font-size: 1.3rem; display: flex; flex-direction: column;">
+	                    <label>Email-Id:</label>
+	                    <input type="email" name="Email" required placeholder="Email Id">
+	                </div>
+	                <div style="padding: 50px; width: 100%; font-size: 1.3rem; display: flex; flex-direction: column;">
+	                    <label>Phone Number:</label>
+	                    <input type="text/number" id="phone" name="phone" placeholder="Phone Number">
+	                </div>
+	            </div>
+	        
+	        </div>
+	    </section>
+    <!-- end of form -->
+
+<!-- footer -->
+ <footer>
+	<div class="outerfooter">
+		<div class="smallfooter" >
+			<h1>Follow Us</h1>
+			<a href="#" style="padding: 5px;"><img src="images/contacts/fb.png" style="height: 30px; border: none; outline: none;"> Facebook</a>
+			<a href="#" style="padding: 5px;"><img src="images/contacts/twitter.png" style="height: 30px; width: 30px; background-color: white; border: none; outline: none;"> twitter</a>
+			<a href="#" style="padding: 5px;"><img src="images/contacts/insta.png" style="height: 30px; border: none; outline: none;"> instagram</a>
+			<a href="#" style="padding: 5px;"><img src="images/contacts/utube.png" style="height: 30px; width: 30px; background-color: white; border: none; outline: none; border-radius: 50%;"> Youtube</a>
+		</div>
+		<div class="smallfooter">
+			<h1>Links</h1>
+			<a  href="#">Schedule</a>
+			<a  href="#">Speakers</a>
+			<a  href="#">Contact</a>
+			<a  href="career.html">Career</a>
+		</div>
+		<div class="smallfooter">
+        <h1>Venue</h1>
+        <p style="font-size: 1.3rem; color: white;">House no 432,
+             Rampura Mohalla,
+             Street no 7,</p>
+        <p style="font-size: 1.3rem; color: white;">Hisar, Haryana
+        </p>
+    </div>
+	</div>
+		<p class="copyryt">&copy; 2020 All rights reserved | This template is made by Ravi Ghorla<p>
+ </footer>
+<!-- end of footer -->
+
+    <script>
+	    const hamburger = document.querySelector(".hamburger-menu")
+	    const navUL = document.querySelector(".nav-ul")
+	    
+	    hamburger.addEventListener("click", ()=>
+	    	{
+	    		navUL.classList.toggle("show");
+	    	})
+
+	    hamburger.addEventListener("click", ()=>
+	    	{
+	    		navUL.classList.toggle("hide");
+	    	})
+
+
+
+	    const homepicsarray = [{
+	            name: "abc",
+	            img: "images/home/1.jpg"
+	        },
+
+	        {
+	            name: "eret",
+	            img: "images/home/2.jpg"
+	        },
+
+	        {
+	            name: "jyj",
+	            img: "images/home/3.jpg"
+	        },
+
+	        {
+	            name: "afsdf",
+	            img: "images/home/4.jpg"
+	        },
+
+	        {
+	            name: "sf",
+	            img: "images/home/5.jpg"
+	        },
+
+	        {
+	            name: "cde",
+	            img: "images/home/6.jpg"
+	        }
+	    ];
+
+
+	    function homepicsinfo(pics) {
+	        return `<img src="${pics.img}" style="width: 33.33%; height: 100%; display: "inline-block"; " 
+		onmouseover="${pics.name}" onmouseout="this.src='${pics.img}'">`
+	    }
+
+	    document.getElementById("homepics").innerHTML = `${homepicsarray.map(homepicsinfo).join('')}`;
+    </script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
